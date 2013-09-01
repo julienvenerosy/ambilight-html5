@@ -1,0 +1,54 @@
+//IMPORTS
+@import "base";
+@import "compass/reset";
+@import "compass/css3";
+
+
+//COMMONS
+* { box-sizing: border-box; }
+
+$color1 : #1f253d;
+$color2 : #394264;
+$color3 : #4fc4f6;
+$width_tv : 800;
+$height_tv : 460;
+$width_player : 780;
+$height_player : 439;
+
+html{
+    background: $color1;
+}
+
+body{
+    min-width: ($width_tv+10)+px;
+}
+
+#tv{
+    height: $height_tv+px;
+    width: $width_tv+px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -($height_tv/2)+px;
+    margin-left: -($width_tv/2)+px;
+    z-index: 500;
+    background:$color2;
+    @include border-radius(10px);
+
+    #video{
+        width: $width_player+px;
+        height: $height_player+px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -($height_player/2)+px;
+        margin-left: -($width_player/2)+px;
+        z-index: 600;
+        background:$color3;
+        @include border-radius(5px);
+
+        iframe{
+            -webkit-filter: grayscale(0.5) blur(10px);
+        }
+    }
+}

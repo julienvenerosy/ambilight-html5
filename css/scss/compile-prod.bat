@@ -1,0 +1,1 @@
+compass compile --output-style compressed --force
